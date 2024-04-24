@@ -24,7 +24,7 @@ enum InnerExecutor {
 }
 
 #[derive(Clone)]
-pub(crate) struct Executor<E: Engine> {
+pub struct Executor<E: Engine> {
     engine: E,
     stdio: Stdio,
     inner: OnceCell<InnerExecutor>,
