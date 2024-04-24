@@ -17,6 +17,6 @@ pub use manager::{Sandbox as SandboxService, Service as ManagerService};
 pub use shim::Cli as ShimCli;
 pub use stdio::Stdio;
 
-pub(crate) mod containerd;
-pub(crate) mod oci;
+pub mod containerd;
+pub mod oci;
 pub use oci::WasmLayer;

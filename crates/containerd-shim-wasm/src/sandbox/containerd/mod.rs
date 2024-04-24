@@ -3,4 +3,4 @@
 mod client;
 mod lease;
 
-pub(crate) use client::Client;
+pub use client::Client;
