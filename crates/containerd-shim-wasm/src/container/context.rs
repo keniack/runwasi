@@ -31,6 +31,7 @@ pub trait RuntimeContext {
     // the platform for the container using the struct defined on the OCI spec definition
     // https://github.com/opencontainers/image-spec/blob/v1.1.0-rc5/image-index.md
     fn platform(&self) -> &Platform;
+    fn specs(&self) -> Spec;
 }
 
 /// The source for a WASI module / components.
@@ -82,6 +83,9 @@ pub(crate) struct WasiContext<'a> {
 }
 
 impl RuntimeContext for WasiContext<'_> {
+    fn specs(&self) -> Spec{
+        self.spec.clone()
+    }
     fn args(&self) -> &[String] {
         self.spec
             .process()
